@@ -1,0 +1,280 @@
+.navbar-brand {
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
+}
+
+.custom-navbar .custom-nav-item a {
+  color: white !important;
+}
+
+.custom-nav-item:hover {
+  background-color: #9e5a63;
+  border: solid #9e5a63 1px;
+  border-radius: 8px;
+}
+
+.remove-video-margin {
+  margin: 0px;
+  padding: 0px;
+}
+
+.vid-background {
+  position: relative;
+}
+
+video {
+  height: 88.8vh !important;
+  width: 100% !important;
+  object-fit: fill;
+}
+
+.video-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+  background-color: #a16e83;
+  margin: 0px;
+  padding: 0px;
+}
+
+.vid-head {
+  font-family: "Roboto Slab", serif;
+}
+
+.video-content {
+  position: absolute;
+  z-index: 3;
+  top: 35%;
+  left: 35%;
+  text-align: center;
+}
+
+a.social-hover:hover {
+  background-color: darkgray;
+  text-decoration: none;
+  padding: 5px 100px;
+}
+
+.footer {
+  padding: 1px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.social-icons {
+  padding: 1px 0px;
+}
+
+#social {
+  margin-bottom: 0px;
+  background-color: grey;
+}
+
+.start {
+  background-color: #9e5a63;
+  color: white;
+
+  font-size: 20px;
+}
+
+.view {
+  background-color: #9e5a63;
+  color: white;
+}
+.reg-background {
+  background-color: #f3e0dc;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
+
+.stu-reg {
+  font-family: "Roboto Slab", serif;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.std-form {
+  width: 40%;
+  margin: 0 auto;
+  padding-bottom: 65px;
+}
+
+.stuLogin {
+  font-family: "Roboto Slab", serif;
+  padding-top: 150px;
+  padding-bottom: 20px;
+}
+
+#AdminLogin {
+  font-family: "Roboto Slab", serif;
+  padding-top: 1000px;
+  padding-bottom: 20px;
+}
+
+.stdLoginForm {
+  width: 40%;
+  margin: 0 auto;
+  padding-bottom: 65px;
+}
+
+.about1 {
+  padding-right: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  width: 50%;
+  float: left;
+}
+
+.about2 {
+  padding-left: 0;
+  padding-right: 20px;
+  padding-top: 20px;
+  width: 50%;
+  float: right;
+}
+
+.aboutUs {
+  font-family: "Roboto Slab", serif;
+  padding-top: 130px;
+  padding-bottom: 30px;
+  margin-left: 40px;
+}
+
+#Contact {
+  font-family: "Roboto Slab", serif;
+  padding-top: 150px;
+  padding-bottom: 20px;
+}
+
+.stripe {
+  background-color: #9e5a63;
+ /* background-image: linear-gradient(240deg, #9e5a63);*/
+  padding: 3rem;
+  height: 13rem;
+  margin-top: 4rem;
+  transform: rotate(11.5deg);
+  z-index: 0;
+}
+
+
+.profile-background {
+  background-image: url("../images_about/profile-background2.jpg");
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.feedback {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.stdImg {
+  float: left;
+  margin: 0px;
+  width: 30%;
+}
+.stdName {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  width: 70%;
+}
+
+.feed-div {
+  margin-left: 30px;
+  float: left;
+  width: 30%;
+  padding-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  width: 100%;
+}
+.container-cat {
+  padding-top: 10px;
+  margin-bottom: 40px;
+}
+
+.stu-feed {
+  font-family: "Roboto Slab", serif;
+}
+
+.f_prof,
+.feed-display {
+  color: #9e5a63;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .vid-head {
+    display: none;
+  }
+  .video-content {
+    top: 40%;
+  }
+
+  /*#social {
+    margin-bottom: 50px;
+  }*/
+  .custom-nav .custom-nav-item a {
+    padding: 10px 20px;
+  }
+
+  .myProfile {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+  #social {
+    margin-bottom: 40px;
+  }
+
+  .about2 {
+    display: none;
+  }
+
+  .about1 {
+    padding-left: 0px;
+    max-width: 100%;
+    float: none;
+    text-align: center;
+    flex: none;
+    width: 100%;
+  }
+  .aboutUs {
+    margin-right: 30px;
+  }
+  .feedback {
+    margin-top: 120px;
+  }
+  .stdImg {
+    display: none;
+  }
+  .flex-container {
+    padding-top: 0px;
+  }
+
+  .f_name,
+  .f_prof {
+    margin-bottom: 2px;
+  }
+
+  .container-cat {
+    padding-top: 90px;
+  }
+}
