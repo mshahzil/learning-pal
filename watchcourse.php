@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($_SESSION)) {
 	session_start();
 }
@@ -9,13 +8,10 @@ include("header.php");
 
 if (isset($_SESSION['is_login'])) {
 	$stuEmail = $_SESSION['stdLoginemail'];
-}
-else {
+} else {
 	echo "<script> location.href='./user_login.php'; </script>";
 }
-
 ?>
-
 
 <div class="container-fluid reg-background" style="padding-top:100px; margin-bottom:120px;">
 	<div class="row mb-0">
@@ -44,19 +40,18 @@ else {
 	<div class="row"></div>
 </div>
 
-
 <script>
 	$(function () {
-
 		$("#videoarea").attr("src", $("#playlist li").eq(0).attr("movieurl"));
-
 		$("#playlist li").on("click" , function() {
 			$("#videoarea").attr("src", $(this).attr("movieurl"));
 		});
 	});
 </script>
+
 <?php
 include("footer.php");
 ?>
+
 </body>
 </html>

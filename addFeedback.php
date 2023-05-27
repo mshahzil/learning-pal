@@ -6,38 +6,31 @@ if (!isset($_SESSION)) {
 include('admin_header.php');
 include('config.php');
 
- if (isset($_SESSION['is_admin_login'])) {
- 	$adminEmail = $_SESSION['adminLogemail'];
- }
- else {
+if (isset($_SESSION['is_admin_login'])) {
+	$adminEmail = $_SESSION['adminLogemail'];
+} else {
 	echo "<script> location.href='./admin_login.php'; </script>";
- }
+}
 
-	if (isset($_REQUEST['feedbackSubmitBtn'])) {
-		if ($_REQUEST['feedback'] == "" || $_REQUEST['std_id'] == "") {
-			$msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Fill All Fields!</div>';
+if (isset($_REQUEST['feedbackSubmitBtn'])) {
+	if ($_REQUEST['feedback'] == "" || $_REQUEST['std_id'] == "") {
+		$msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Fill All Fields!</div>';
+	} else {
+		$feedback = $_REQUEST['feedback'];
+		$std_id = $_REQUEST['std_id'];
+		$sql = "INSERT INTO feedback (feedback, std_id) VALUES ('$feedback', '$std_id')";
+		if (mysqli_connect_errno()) {
+			echo "Failed to connect to MySQL: " . mysqli_connect_error();
+			exit();
 		}
-		else {
-			$feedback = $_REQUEST['feedback'];
-			$std_id = $_REQUEST['std_id'];
-
-			$sql = "INSERT INTO feedback (feedback, std_id) VALUES ('$feedback', '$std_id')";
-
-			if (mysqli_connect_errno()) {
-  				echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  				exit();
-			}
-
-			$result = mysqli_query($mysqli, $sql);
-			if ($result == TRUE) {
-				$msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Feedback Added Successfully</div>';
-			}
-			else {
-				$msg = "<div class='alert alert-danger col-sm-6 ml-5 mt-2'>Unable to Add Feedback</div>";
-			}
-
+		$result = mysqli_query($mysqli, $sql);
+		if ($result == TRUE) {
+			$msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Feedback Added Successfully</div>';
+		} else {
+			$msg = "<div class='alert alert-danger col-sm-6 ml-5 mt-2'>Unable to Add Feedback</div>";
 		}
 	}
+}
 ?>
 
 <div class="col-sm-6 mt-5 mx-3 jumbotron">
@@ -55,18 +48,13 @@ include('config.php');
 			<button type="submit" class="btn btn-danger" id="feedbackSubmitBtn" name="feedbackSubmitBtn">Submit</button>
 			<a href="adminFeedback.php" class="btn btn-secondary">Close</a>
 		</div>
-		<?php
-			if (isset($msg)) {
-				echo $msg;
-			}
-		?>
+		<?php if (isset($msg)) { echo $msg; } ?>
 	</form>
 </div>
 
-</div>  <!-- div Row close from header -->
+</div> <!-- div Row close from header -->
 </div> <!-- div Container-fluid close from header -->
 
 <?php
-	include('./footer.php');
+include('./footer.php');
 ?>
-

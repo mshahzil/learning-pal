@@ -9,7 +9,12 @@
   color: white !important;
 }
 
-.custom-nav-item:hover {
+.custom-nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.custom-nav-item a:hover {
   background-color: #9e5a63;
   border: solid #9e5a63 1px;
   border-radius: 8px;
@@ -22,12 +27,15 @@
 
 .vid-background {
   position: relative;
+  height: 90.3vh;
 }
 
 video {
-  height: 88.8vh !important;
+  height: 100% !important;
   width: 100% !important;
   object-fit: fill;
+  padding: 0;
+  margin: 0;
 }
 
 .video-overlay {
@@ -37,7 +45,7 @@ video {
   top: 0;
   left: 0;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 0.4;
   background-color: #a16e83;
   margin: 0px;
   padding: 0px;
@@ -82,25 +90,50 @@ a.social-hover:hover {
 .start {
   background-color: #9e5a63;
   color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
 
-  font-size: 20px;
+.start:hover {
+  background-color: black;
+  color: white;
 }
 
 .view {
   background-color: #9e5a63;
   color: white;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 600;
 }
+
+.view:hover {
+  background-color: black;
+  color: white;
+}
+
+.view-2 {
+  background-color: #9e5a63;
+  color: white;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 50%;
+}
+
 .reg-background {
   background-color: #f3e0dc;
   width: 100%;
   position: absolute;
   height: 100%;
+  font-family: "Roboto Slab", serif;
 }
 
 .stu-reg {
   font-family: "Roboto Slab", serif;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  padding-top: 125px;
+  padding-bottom: 40px;
 }
 
 .std-form {
@@ -109,10 +142,38 @@ a.social-hover:hover {
   padding-bottom: 65px;
 }
 
+.signup-btn {
+  background-color: #9e5a63;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  /* font-size: 20px; */
+}
+
+.signup-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.signup-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.signup-link:hover {
+  color: #9e5a63;
+}
+
+.signup-btn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .stuLogin {
   font-family: "Roboto Slab", serif;
-  padding-top: 150px;
-  padding-bottom: 20px;
+  padding-top: 140px;
+  padding-bottom: 40px;
 }
 
 #AdminLogin {
@@ -146,26 +207,23 @@ a.social-hover:hover {
 .aboutUs {
   font-family: "Roboto Slab", serif;
   padding-top: 130px;
-  padding-bottom: 30px;
-  margin-left: 40px;
 }
 
 #Contact {
   font-family: "Roboto Slab", serif;
-  padding-top: 150px;
+  padding-top: 130px;
   padding-bottom: 20px;
 }
 
 .stripe {
   background-color: #9e5a63;
- /* background-image: linear-gradient(240deg, #9e5a63);*/
+  /* background-image: linear-gradient(240deg, #9e5a63);*/
   padding: 3rem;
   height: 13rem;
   margin-top: 4rem;
   transform: rotate(11.5deg);
   z-index: 0;
 }
-
 
 .profile-background {
   background-image: url("../images_about/profile-background2.jpg");
@@ -177,9 +235,18 @@ a.social-hover:hover {
   padding-bottom: 40px;
 }
 
+.stdProfileImg {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin-right: 20px;
+  border: 2px solid white;
+}
+
 .feedback {
-  margin-top: 90px;
+  margin-top: 115px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .stdImg {
@@ -187,6 +254,15 @@ a.social-hover:hover {
   margin: 0px;
   width: 30%;
 }
+
+.stdImg img {
+  border-radius: 80%;
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  padding: 0px;
+}
+
 .stdName {
   float: left;
   margin: 0px;
@@ -207,7 +283,9 @@ a.social-hover:hover {
   padding-top: 20px;
   width: 100%;
 }
+
 .container-cat {
+  font-family: "Roboto Slab", serif;
   padding-top: 10px;
   margin-bottom: 40px;
 }
@@ -225,13 +303,11 @@ a.social-hover:hover {
   .vid-head {
     display: none;
   }
+
   .video-content {
     top: 40%;
   }
 
-  /*#social {
-    margin-bottom: 50px;
-  }*/
   .custom-nav .custom-nav-item a {
     padding: 10px 20px;
   }
@@ -240,6 +316,7 @@ a.social-hover:hover {
     padding-top: 70px;
     padding-bottom: 40px;
   }
+
   #social {
     margin-bottom: 40px;
   }
@@ -256,15 +333,19 @@ a.social-hover:hover {
     flex: none;
     width: 100%;
   }
+
   .aboutUs {
     margin-right: 30px;
   }
+
   .feedback {
     margin-top: 120px;
   }
+
   .stdImg {
     display: none;
   }
+
   .flex-container {
     padding-top: 0px;
   }

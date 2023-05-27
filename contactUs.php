@@ -1,37 +1,31 @@
 <?php
-include("./header.php");
-include("./config.php");
+	include("./header.php");
+	include("./config.php");
 ?>
-
 
 <?php
-if (isset($_REQUEST["submit"])) {
-	if ($_REQUEST['name'] == "" || $_REQUEST['subject'] == "" || $_REQUEST['email'] == "") {
-		$msg = '<span class="alert alert-warning col-sm-6 ml-3 mt-2">Please fill all fields</span>';
-	}
-	else {
-		$name = $_REQUEST['name'];
-		$email = $_REQUEST['email'];
-		$subject = $_REQUEST['subject'];
-		$message = $_REQUEST['message'];
-
-		$sql = "INSERT INTO contact (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
-
-		$result = mysqli_query($mysqli, $sql);
-		if ($result == TRUE) {
-			$msg = '<span class="alert alert-success col-sm-6 ml-3 mt-2">Message Sent Successfully</span>';
-		}
-		else {
-			$msg = "<span class='alert alert-danger col-sm-6 ml-3 mt-2'>Unable to Send Message. Refresh and Try Again</span>";
+	if (isset($_REQUEST["submit"])) {
+		if ($_REQUEST['name'] == "" || $_REQUEST['subject'] == "" || $_REQUEST['email'] == "") {
+			$msg = '<span class="alert alert-warning col-sm-6 ml-3 mt-2">Please fill all fields</span>';
+		} else {
+			$name = $_REQUEST['name'];
+			$email = $_REQUEST['email'];
+			$subject = $_REQUEST['subject'];
+			$message = $_REQUEST['message'];
+			$sql = "INSERT INTO contact (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
+			$result = mysqli_query($mysqli, $sql);
+			if ($result == TRUE) {
+				$msg = '<span class="alert alert-success col-sm-6 ml-3 mt-2">Message Sent Successfully</span>';
+			} else {
+				$msg = "<span class='alert alert-danger col-sm-6 ml-3 mt-2'>Unable to Send Message. Refresh and Try Again</span>";
+			}
 		}
 	}
-}
 ?>
-
 
 <div class="container-fluid reg-background">
 	<div class="container" id="Contact">
-		<h2 class="text-center mb-4">Contact Us</h2>
+		<h1 class="text-center mb-5">Contact Us</h1>
 		<div class="row">
 			<div class="col-md-8">
 				<form action="" method="POST">
@@ -53,8 +47,6 @@ if (isset($_REQUEST["submit"])) {
 	</div>
 </div>
 
-
-
 <?php
-include("footer.php");
+	include("footer.php");
 ?>

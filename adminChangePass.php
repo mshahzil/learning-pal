@@ -34,10 +34,7 @@ if (isset($_REQUEST['adminPassUpdatebtn'])) {
 		}
 	}
 }
-
 ?>
-
-
 
 <div class="col-sm-9 mt-5">
 	<div class="row">
@@ -59,10 +56,9 @@ if (isset($_REQUEST['adminPassUpdatebtn'])) {
 	</div>
 </div>
 
-
 </div>  <!-- div Row close from header -->
 </div> <!-- div Container-fluid close from header -->
 
 <?php
-	include('admin_footer.php');
+include('admin_footer.php');
 ?>

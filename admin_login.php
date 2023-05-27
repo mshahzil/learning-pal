@@ -1,6 +1,7 @@
 <?php
-include("header.php");
+    include("header.php");
 ?>
+
 <div class="container-fluid reg-background">
     <h1 class="text-center stuLogin">Admin Login Form</h1>
     <form id="stdLoginForm" class="stdLoginForm" action="login.php" method="post" name="form3">
@@ -10,15 +11,13 @@ include("header.php");
         <div class="form-group">
             <i class="fas fa-key"></i><label for="adminLogpass" class="text-left pl-2 font-weight-bold">Password</label><small id="admErr2"></small><input type="password" class="form-control" placeholder="Password" name="adminLogpass" id="adminLogpass">
         </div>
-        <div class="text-center">
+        <div class="text-right">
             <small id="AdminLoginMsg"></small> 
-            <button id="Login" type="button" class="btn start" onclick="AdminLoginfunc()">Login</button>
+            <button id="Login" type="button" class="btn signup-btn" onclick="AdminLoginfunc()">Login</button>
         </div>
     </form>
-
-
 </div>
 
 <?php
-include("footer.php");
+    include("footer.php");
 ?>
