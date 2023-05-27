@@ -17,9 +17,7 @@ if(isset($_POST['stduser']) && isset($_POST['stdname']) && isset($_POST['stdemai
 	$stdname = $_POST['stdname'];
 	$stdemail = $_POST['stdemail'];
 	$stdpass =  $_POST['stdpass'];
-	
-	
-			
+				
 	//insert data to database	
 	$query = "INSERT INTO student (std_name, std_email, std_pass) VALUES ('$stdname','$stdemail', '$stdpass')";
         
@@ -29,12 +27,7 @@ if(isset($_POST['stduser']) && isset($_POST['stdname']) && isset($_POST['stdemai
     else{
         echo json_encode("Failed");
     }
-		
-	
-	
+
 	$mysqli->close();
 }
 ?>
-
-
-

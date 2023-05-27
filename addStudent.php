@@ -13,7 +13,6 @@ else {
 	echo "<script> location.href='./admin_login.php'; </script>";
 }
 
-
 if (isset($_REQUEST['newSubmitBtn'])) {
 	if ($_REQUEST['std_name'] == "" || $_REQUEST['std_email'] == "" || $_REQUEST['std_pass'] == "" || $_REQUEST['std_prof'] == "") {
 		$msg = '<div class="alert alert-warning col-sm-6 ml-5 mt-2">Fill All Fields!</div>';
@@ -22,20 +21,14 @@ if (isset($_REQUEST['newSubmitBtn'])) {
 		$std_name = $_REQUEST['std_name'];
 		$std_email = $_REQUEST['std_email'];
 		$std_pass = $_REQUEST['std_pass'];
-		$std_prof = $_REQUEST['std_prof'];
-		
-
+		$std_prof = $_REQUEST['std_prof'];		
 		$sql = "INSERT INTO student (std_name, std_email, std_pass, std_prof) VALUES ('$std_name', '$std_email', '$std_pass', '$std_prof')";
-
-
-
 		if (mysqli_query($mysqli, $sql) == TRUE) {
 			$msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2">Student Added Successfully</div>';
 		}
 		else {
 			$msg = "<div class='alert alert-danger col-sm-6 ml-5 mt-2'>Unable to Add Student</div>";
 		}
-
 	}
 }
 ?>

@@ -52,18 +52,6 @@
 								Students
 							</a>
 						</li>
-<!-- 						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="fas fa-tachometer-alt"></i>
-								Sell Report
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">
-								<i class="fas fa-tachometer-alt"></i>
-								Payment Status
-							</a>
-						</li> -->
 						<li class="nav-item" style="color: #f3e0dc">
 							<a href="adminFeedback.php" class="nav-link">
 							<i class="fas fa-comments"></i>

@@ -6,22 +6,19 @@ if (!isset($_SESSION)) {
 include('admin_header.php');
 include('config.php');
 
- if (isset($_SESSION['is_admin_login'])) {
- 	$adminEmail = $_SESSION['adminLogemail'];
- }
- else {
+if (isset($_SESSION['is_admin_login'])) {
+	$adminEmail = $_SESSION['adminLogemail'];
+} else {
 	echo "<script> location.href='./admin_login.php'; </script>";
- }
+}
 
+$sql = "SELECT * FROM course";
+$result = mysqli_query($mysqli, $sql);
 ?>
 
 <div class="col-sm-9 mt-5">
 	<p class="bg-dark text-white p-2 ">List of Courses</p>
-	<?php 
-	$sql = "SELECT * FROM course";
-	$result = mysqli_query($mysqli, $sql);
-	if($result->num_rows > 0){
-		?>
+	<?php if($result->num_rows > 0){ ?>
 		<table class="table">
 			<thead>
 				<tr>
@@ -71,16 +68,12 @@ if(isset($_REQUEST['delete'])){
 	$sql = "DELETE FROM course WHERE course_id = {$_REQUEST['id']}";
 	if (mysqli_query($mysqli, $sql) == TRUE){
 		echo '<meta http-equiv="refresh" content="0;URL=?deleted" />';
-	}
-	else{
+	} else{
 		echo "Unable to Delete Data";
 	}
 }
 ?>
 <!-- End Delete Button Functionality -->
-
-
-<!-- div Row close from header -->
 
 <div>
 	<a href="./addCourse.php" class="btn btn-danger box" style="position: fixed; right: 40px; bottom: 40px;">

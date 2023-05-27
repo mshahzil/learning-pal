@@ -7,8 +7,7 @@ include('admin_header.php');
 
 if (isset($_SESSION['is_admin_login'])) {
 	$adminEmail = $_SESSION['adminLogemail'];
-}
- else {
+} else {
  	echo "<script> location.href='./admin_login.php'; </script>";
  }
 

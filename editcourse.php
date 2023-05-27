@@ -30,37 +30,27 @@ if(isset($_REQUEST['reupdate'])) {
 		$coriginalprice = $_REQUEST['course_original_price'];
 		$cprice = $_REQUEST['course_price'];
 		$cimg = './image/courseimg/'. $_FILES['course_img']['name'];
-
 		$sql = "UPDATE course SET course_id = '$cid', course_name = '$cname', course_desc = '$cdesc', course_author = '$cauthor', course_duration = '$cduration', course_original_price = '$coriginalprice', course_price = '$cprice', course_img = '$cimg' WHERE course_id = '$cid'";
-
 		if(mysqli_query($mysqli, $sql) == TRUE) {
 			//below msg display on form submit success
 			$msg = '<div class="alert alert-success col-sm-6 ml-5 mt-2" role="alert"> Updated Successfully </div>';
-		}
-
-		else {
-				//below msg display on form submit failed
+		} else {
+			//below msg display on form submit failure
 			$msg = '<div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert"> Unable to Update </div>';
 		}
-
 	}
 }
-
 ?>
 
 <div class="col-sm-6 mt-5 mx-3 jumbotron">
 	<h3 class="text-center">Update Course Details</h3>
-
-	<?php  
+	<?php
 	if(isset($_REQUEST['view'])){
 		$sql = "SELECT * FROM course WHERE course_id = {$_REQUEST['id']}";
 		$result = mysqli_query($mysqli, $sql);
 		$row = $result->fetch_assoc();
 	}
-
 	?>
-
-
 	<form action="" method="POST" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="course_id">Course ID</label>
@@ -101,17 +91,14 @@ if(isset($_REQUEST['reupdate'])) {
 			<button type="submit" class="btn btn-danger" id="reupdate" name="reupdate">Update</button>
 			<a href="adminCourses.php" class="btn btn-secondary">Close</a>
 		</div>
-
 		<?php
 		if (isset($msg)) { echo $msg; }
 		?>
-
 	</form>
 </div>
 
 </div>  <!-- div Row close from header -->
 </div> <!-- div Container-fluid close from header -->
-
 
 <?php
 include('admin_footer.php');

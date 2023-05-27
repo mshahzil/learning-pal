@@ -2,6 +2,7 @@
 if(!isset($_SESSION)){
     session_start();
 }
+
 include('profileHeader.php');
 include_once('config.php');
 
@@ -11,11 +12,11 @@ if(isset($_SESSION['is_login'])){
     $res = mysqli_query($mysqli, $query1);
     $result = $res->fetch_assoc();
     $std_id = $result['std_id'];
-
-}else{
+} else{
     echo "<script>location.href='index.php'</script>";
 }
 ?>
+
 <body class="profile-background">
 <div class="container mt-5 ;" style="padding-top:10px; padding-bottom: 40px;">
 	<h1 class="text-center">Enrolled Courses</h1>
@@ -23,7 +24,6 @@ if(isset($_SESSION['is_login'])){
 	<!-- Start of Deck 1 -->
 	<div class="card-deck mt-4 ">
         <?php
-
         $query2 = "SELECT * FROM enrolment WHERE std_id = '$std_id'";
         $res2 = mysqli_query($mysqli, $query2);
         if ($res2->num_rows > 0) {
@@ -55,7 +55,6 @@ if(isset($_SESSION['is_login'])){
     </div>
 </div>
 </body>
-
 
 <?php
 include("footer.php");

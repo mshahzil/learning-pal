@@ -22,8 +22,7 @@ if($result->num_rows == 1){
 if(isset($_REQUEST['submitFeedback'])){
     if(($_REQUEST['feedback'] == "")){
         $msg='<div class="alert alert-danger col-sm-6 ml-5 mt-2" role="alert">Please Enter Feedback</div>';
-
-    }else{
+    } else {
         $feed = $_REQUEST['feedback'];
         $sql="INSERT INTO feedback (feedback, std_id) VALUES ('$feed','$stdId')";
         if($mysqli->query($sql) == TRUE){
@@ -32,28 +31,28 @@ if(isset($_REQUEST['submitFeedback'])){
     }
 }
 ?>
+
 <body class="profile-background">
-<div class="container-fluid col-sm-6 mt-5 " style="padding-top:100px;">
-<div class="row" style="padding-left:0; margin-left:0px;">
-      <div class="col-sm-6">
-    <form  method="POST" enctype="multipart/form-data"style="width:100%">
-        <div class="form-group">
-            <label class="font-weight-bold" for="stdId">Student ID</label>
-            <input type="text" class="form-control" id="stdId" name="stdId" value="<?php if(isset($stdId)){echo $stdId;}?>" readonly>
+    <div class="container-fluid col-sm-6 mt-5 " style="padding-top:100px;">
+        <div class="row" style="padding-left:0; margin-left:0px;">
+            <div class="col-sm-6">
+                <form  method="POST" enctype="multipart/form-data"style="width:100%">
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="stdId">Student ID</label>
+                        <input type="text" class="form-control" id="stdId" name="stdId" value="<?php if(isset($stdId)){echo $stdId;}?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="feedback">Add your Feedback Here:</label>
+                        <textarea class="form-control" id="feedback" name="feedback" row=4></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary" name="submitFeedback">Submit</button>
+                        <?php if(isset($msg)){echo $msg;}?>
+                    </div>            
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label class="font-weight-bold" for="feedback">Add your Feedback Here:</label>
-            <textarea class="form-control" id="feedback" name="feedback" row=4></textarea>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary" name="submitFeedback">Submit</button>
-            <?php if(isset($msg)){echo $msg;}?>
-        </div>
-        
-    </form>
-</div>
-</div>
-</div>
+    </div>
 </body>
 
 <?php

@@ -6,13 +6,11 @@ if (!isset($_SESSION)) {
 include('./admin_header.php');
 include('./config.php');
 
- if (isset($_SESSION['is_admin_login'])) {
+if (isset($_SESSION['is_admin_login'])) {
  	$adminEmail = $_SESSION['adminLogemail'];
- }
- else {
+} else {
 	echo "<script> location.href='./admin_login.php'; </script>";
- }
-
+}
 ?>
 
 <div class="col-sm-9 mt-5">
@@ -38,7 +36,6 @@ include('./config.php');
 					echo     '<td>'.$row['std_name'].'</td>';
 					echo	'<td>'.$row['std_email'].'</td>';
 					echo '<td>';
-
 					echo	'<form action="editstudent.php" method="POST" class="d-inline">
 								<input type="hidden" name="id" value='.$row['std_id'].'>
 								<button type="submit" class="btn btn-info mr-3" name="view" value="view">
@@ -46,7 +43,6 @@ include('./config.php');
 								<i class="fas fa-pen"></i>
 								</button>
 							</form>
-
 					<form action="" method="POST" class="d-inline">
 						<input type="hidden" name="id" value='.$row['std_id'].'>
 						<button type="submit" class="btn btn-secondary" name="delete" value="Delete">
@@ -66,21 +62,17 @@ include('./config.php');
 </div>  
 
 <!-- Start Delete Button Functionality -->
-<?php 
+<?php
 if(isset($_REQUEST['delete'])){
 	$sql = "DELETE FROM student WHERE std_id = {$_REQUEST['id']}";
 	if (mysqli_query($mysqli, $sql) == TRUE){
 		echo '<meta http-equiv="refresh" content="0;URL=?deleted" />';
-	}
-	else{
+	} else{
 		echo "Unable to Delete Data";
 	}
 }
 ?>
 <!-- End Delete Button Functionality -->
-
-
-<!-- div Row close from header -->
 
 <div>
 	<a href="./addStudent.php" class="btn btn-danger box" style="position: fixed; right: 40px; bottom: 40px;">
