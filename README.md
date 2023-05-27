@@ -4,7 +4,9 @@ A web application that allows you to search for online courses, view their detai
 HOW TO RUN THE CODE:
 	-> The source code is supposed to be run on either WAMP or XAMPP.
 	-> Start Apache and MySQL from XAMPP/WAMP Control Panel.
-	-> Place the 'LearningPal' folder inside the 'www' folder of WAMP or 'htdocs' folder of XAMPP respectively.
+	-> Place the 'learning-pal' folder inside the 'www' folder of WAMP or 'htdocs' folder of XAMPP respectively.
 	-> Set the username and password values in the 'config.php' file according to your phpMyAdmin credentials.
-	-> On phpMyAdmin, create a database named 'learningpal' and import the 'learningpal.sql' file present inside the 'LearningPal/sql' folder.
-	-> Open your web browser (preferably Google Chrome) and visit the URL: 'localhost/LearningPal'.
+	-> On phpMyAdmin, create a database named 'learningpal' and import the 'learningpal.sql' file present inside the 'learning-pal/sql' folder.
+	-> Open your web browser (preferably Google Chrome) and visit the URL: 'localhost/learning-pal'.
+
+The screenshots of various pages of the web application are present in the folder 'learning-pal/website-screenshots'.
